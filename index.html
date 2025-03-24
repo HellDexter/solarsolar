@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARPORTbusiness - Solární přístřešky pro auta</title>
+    <meta name="description" content="CARPORTbusiness nabízí inovativní řešení solárních přístřešků pro auta s důrazem na ekologii a úsporu energie.">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/enhanced-frames.css">
+    <link rel="stylesheet" href="css/section-dividers.css">
+    <link rel="stylesheet" href="css/custom-buttons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico">
+    <style>
+        /* Přímé vložení stylů pro navbar - tímto obejdeme cache */
+        .navbar {
+            background-color: #07ff01;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            z-index: 1030;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        @media (max-width: 991.98px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .navbar {
+                height: auto;
+                min-height: 70px;
+                padding: 2px 0;
+            }
+            
+            .navbar .container {
+                padding: 0 5px 0 0;
+                flex-wrap: nowrap;
+            }
+            
+            .navbar-brand {
+                padding: 0;
+                margin: 0;
+                flex: 1 1 auto;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                max-width: 85%;
+            }
+            
+            .logo {
+                height: 100%;
+                width: auto;
+                max-width: 100%;
+                max-height: none;
+                padding: 2px;
+                object-fit: contain;
+                object-position: left center;
+            }
+            
+            /* Důležité - zastavení zmenšení loga při scrollování */
+            .navbar.scrolled .logo {
+                height: 100%;
+            }
+            
+            .navbar.scrolled {
+                min-height: 70px;
+            }
+            
+            .navbar-toggler {
+                padding: 4px 8px;
+                margin: 0 0 0 auto;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                order: 2;
+                flex: 0 0 auto;
+            }
+            
+            .navbar-collapse {
+                background-color: #fff;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                z-index: 1020;
+                margin: 0 10px;
+            }
+            
+            .hero-section {
+                margin-top: 0;
+                padding-top: 80px;
+            }
+        }
+        
+        /* Přidávám specifické nastavení pro logo na mobilních zařízeních */
+        @media (max-width: 575.98px) {
+            .navbar {
+                min-height: 70px;
+                padding: 0;
+            }
+            
+            .navbar-brand {
+                height: 70px;
+                max-width: 85%;
+                padding-left: 5px;
+            }
+            
+            .logo {
+                height: 100%;
+                max-height: 70px;
+                width: auto;
+                max-width: 100%;
+                object-fit: contain;
+                object-position: left center;
+            }
+            
+            /* Důležité - zastavení zmenšení loga při scrollování */
+            .navbar.scrolled .logo {
+                height: 100%;
+                max-height: 70px;
+            }
+            
+            .navbar.scrolled {
+                min-height: 70px;
+            }
+            
+            .navbar-toggler {
+                padding: 4px 6px;
+                margin-right: 5px;
+            }
+        }
+        
+        .hero-section {
+            position: relative;
+        }
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .scroll-down-container {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .scroll-down-btn {
+            background-color: #07ff01;
+            color: black;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            outline: none;
+            transition: all 0.3s ease;
+            animation: glow 2s infinite;
+        }
+        .scroll-down-btn i {
+            font-size: 24px;
+            margin-top: 13px;
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 4px 8px rgba(7, 255, 1, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(7, 255, 1, 0.9);
+            }
+            100% {
+                box-shadow: 0 4px 8px rgba(7, 255, 1, 0.3);
+            }
+        }
+        
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-left: 6px solid #07ff01;
+        }
+        
+        .photo-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-left: 6px solid #07ff01;
+        }
+        
+        .roi-calculator-range {
+            border-radius: 10px;
+            background-color: #e9e9e9;
+            border: 1px solid #ccc;
+            height: 8px;
+            cursor: pointer;
+        }
+        
+        .roi-calculator-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: #07ff01;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .roi-calculator-range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background-color: #07ff01;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .search-box {
+            margin-top: 20px;
+        }
+        
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-left: 6px solid #07ff01;
+        }
+        
+        /* Styling pro posuvníky */
+        .roi-calculator-range {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;  
+            background: #e9e9e9;
+            outline: none;
+            border: 1px solid #ccc;
+        }
+        
+        .roi-calculator-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%; 
+            background: #07ff01;
+            cursor: pointer;
+            border: 2px solid #fff;
+            box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        }
+        
+        .roi-calculator-range::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #07ff01;
+            cursor: pointer;
+            border: 2px solid #fff;
+            box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        }
+        
+        .roi-calculator-range::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #e9e9e9;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        .roi-calculator-range::-moz-range-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #e9e9e9;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="CARPORTbusiness Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">O nás</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Produkty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#technology">Technologie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#for-business">Pro firmy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#roi">ROI Kalkulačka</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontakt</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link lang-switch dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            CZ
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="en/index.html">EN</a></li>
+                            <li><a class="dropdown-item" href="de/index.html">DE</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section" style="background-color: #000000; position: relative; overflow: hidden; height: 100vh; padding: 0; width: 100%; margin: 0;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background-color: rgba(0,0,0,0.5);"></div>
+        <img src="img/hero.jpg" alt="CARPORTbusiness Hero" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+        <div class="container" style="position: relative; z-index: 2; height: 100%; display: flex; align-items: center;">
+            <div class="hero-content" style="max-width: 800px; padding: 0;">
+                <h1 style="color: #ffffff; font-size: 3.5rem;">Vydělávejte s <span class="highlight">čistou energií</span> pro elektromobilitu</h1>
+                <p style="color: #ffffff; font-size: 1.2rem;">Provozujte vlastní solární CARPORTbusiness, vydělávejte na nabíjení elektromobilů a podílejte se na budoucnosti udržitelné energie. Investujte do vlastní nabíjecí stanice a vytvořte si stabilní a dlouhodobě výnosný příjem.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Kontaktujte nás</a>
+                    <a href="#products" class="btn btn-secondary" style="border: 2px solid #07ff01; background: transparent; color: #ffffff;">Zjistit více</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down-container" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%);">
+            <a href="#about" class="scroll-down-btn">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>O <span class="highlight">nás</span></h2>
+                <p>Inovativní řešení pro udržitelnou budoucnost</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-content" style="background-color: #f9f9f9; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                        <h3>Inovativní řešení pro váš výdělek</h3>
+                        <p>Přinášíme na trh inovativní řešení, které spojuje udržitelnou energii s příležitostí k výdělku. Naše solární CARPORTbusiness nejsou jen technologií budoucnosti, ale také výnosnou investicí – umožňují jejich majitelům vydělávat na nabíjení elektromobilů a zároveň přispívat k ekologické transformaci dopravy.</p>
+                        <p>Díky nejmodernějším výrobním procesům, které neustále optimalizujeme, zajišťujeme nejvyšší kvalitu, dlouhou životnost a efektivitu našich systémů. Každý CARPORTbusiness je navržen tak, aby odolával povětrnostním podmínkám nejméně 30 let a přinášel dlouhodobý stabilní příjem svému majiteli.</p>
+                        <p>S našimi CARPORTbusiness nejen chráníte životní prostředí, ale zároveň budujete vlastní podnikání v oblasti obnovitelné energie.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                    <img src="img/port_shadow.png" alt="CARPORTbusiness Solární přístřešky" class="img-fluid" style="margin-top: -15px;">
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="video-container">
+                        <video id="aboutVideo" width="100%" muted playsinline loop>
+                            <source src="img/Titulky CB.mp4" type="video/mp4">
+                            Váš prohlížeč nepodporuje přehrávání videa.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="text-center mb-4">Naše realizace</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="photo-container gallery-item" data-src="img/gallery/Picture12.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                                <img src="img/gallery/Picture12.jpg" alt="Realizace 1" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="photo-container gallery-item" data-src="img/gallery/Picture13.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                                <img src="img/gallery/Picture13.jpg" alt="Realizace 2" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="photo-container gallery-item" data-src="img/gallery/Picture14.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                                <img src="img/gallery/Picture14.jpg" alt="Realizace 3" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section business-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Získejte <span class="highlight">funkční podnikání na klíč</span></h2>
+                <p>Vlastníte parkovací plochu, bytový dům s parkovištěm, pozemek, firemní parkoviště, nebo nevyužitý areál?</p>
+            </div>
+            <div class="text-center mb-4">
+                <p class="business-timeframe" style="font-size: 1.2rem; font-weight: 500; font-style: italic;">Dodací lhůta pouze 3-4 měsíce | Návratnost investice 3-4 let | Životnost 30 let</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="products-intro" style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                        <p>Máte nejméně 6 nebo 12 a více parkovacích míst? CARPORTbusiness je nástroj, jak za cenu malého bytu v Praze vydělávat každý rok okolo 25% investice, podle lokace, frekventovanosti nabíjení, instalované technologie, výkonu elektrárny, počtu nabíječek a příkonu proudu v místě. Po dobu 30 let vyděláváte bez nutnosti mít na místě zaměstnance a být fyzicky neustále na místě.</p>
+                        <p>CARPORTbusiness je samoobslužná dobíjecí stanice s elektrárnou a platebními terminály, která sama vyrábí elektřinu do nabíječek a co nevyrobí si vezme automaticky ze sítě.</p>
+                        <p>Místo si zaregistrujte do mapy nabíječek, zřídíte si lokální reklamu a už jenom sledujete, jak Vám na účet přichází peníze.</p>
+                        <p>Pomůžeme Vám vyřídit potřebná povolení.</p>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="#contact" class="btn permit-btn">Pomůžeme Vám vyřídit potřebná povolení <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row product-models mt-5">
+                <div class="col-lg-4">
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <h3>CARPORTbusiness 1</h3>
+                        </div>
+                        <div class="product-card-body">
+                            <p class="mb-4">Základní model pro 12 parkovacích míst</p>
+                            <div class="product-feature">
+                                <i class="fas fa-solar-panel"></i>
+                                <div>Výkon: 30 kWp</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div>Pořizovací cena: 3 500 000 Kč bez DPH</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-car"></i>
+                                <div>Počet parkovacích míst: 12</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-charging-station"></i>
+                                <div>Počet nabíječek: 1× DC 160 kW + 5× AC 22 kW</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-clock"></i>
+                                <div>Doba nabíjení: DC: 20-40 min, AC: 5 hod</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-battery-full"></i>
+                                <div>Kapacita bateriového úložiště: 150 kWh</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-history"></i>
+                                <div>Životnost systému: 30 let</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-sync-alt"></i>
+                                <div>Návratnost: 3-4 roky</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-chart-line"></i>
+                                <div>Průměrný výnos: 1 000 000 Kč/rok</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-plug"></i>
+                                <div>Min. požadavky na distribuční síť: 3x32A</div>
+                            </div>
+                            <div class="product-price">
+                                <div class="price">3 500 000 Kč</div>
+                                <div class="price-note">bez DPH</div>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#contact" class="btn btn-primary">Mám zájem</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <h3>CARPORTbusiness 2</h3>
+                        </div>
+                        <div class="product-card-body">
+                            <p class="mb-4">Střední model pro 24 parkovacích míst</p>
+                            <div class="product-feature">
+                                <i class="fas fa-solar-panel"></i>
+                                <div>Výkon: 60 kWp</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div>Pořizovací cena: 5 290 000 Kč bez DPH</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-car"></i>
+                                <div>Počet parkovacích míst: 24</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-charging-station"></i>
+                                <div>Počet nabíječek: 1× DC 160 kW + 5× AC 22 kW</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-clock"></i>
+                                <div>Doba nabíjení: DC: 20-40 min, AC: 5 hod</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-battery-full"></i>
+                                <div>Kapacita bateriového úložiště: 300 kWh</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-history"></i>
+                                <div>Životnost systému: 30 let</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-sync-alt"></i>
+                                <div>Návratnost: 3-4 roky</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-chart-line"></i>
+                                <div>Průměrný výnos: 1 500 000 Kč/rok</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-plug"></i>
+                                <div>Min. požadavky na distribuční síť: 3x32A</div>
+                            </div>
+                            <div class="product-price">
+                                <div class="price">5 290 000 Kč</div>
+                                <div class="price-note">bez DPH</div>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#contact" class="btn btn-primary">Mám zájem</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <h3>CARPORTbusiness 3</h3>
+                        </div>
+                        <div class="product-card-body">
+                            <p class="mb-4">Rozšířený model pro 36 parkovacích míst</p>
+                            <div class="product-feature">
+                                <i class="fas fa-solar-panel"></i>
+                                <div>Výkon: 90 kWp</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div>Pořizovací cena: 6 590 000 Kč bez DPH</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-car"></i>
+                                <div>Počet parkovacích míst: 36</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-charging-station"></i>
+                                <div>Počet nabíječek: 1× DC 160 kW + 5× AC 22 kW</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-clock"></i>
+                                <div>Doba nabíjení: DC: 20-40 min, AC: 5 hod</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-battery-full"></i>
+                                <div>Kapacita bateriového úložiště: 300 kWh</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-history"></i>
+                                <div>Životnost systému: 30 let</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-sync-alt"></i>
+                                <div>Návratnost: 3-4 roky</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-chart-line"></i>
+                                <div>Průměrný výnos: 2 000 000 Kč/rok</div>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-plug"></i>
+                                <div>Min. požadavky na distribuční síť: 3x32A</div>
+                            </div>
+                            <div class="product-price">
+                                <div class="price">6 590 000 Kč</div>
+                                <div class="price-note">bez DPH</div>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#contact" class="btn btn-primary">Mám zájem</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-note text-center mt-5">
+                <p>Modelová řada pokračuje jako CARPORTbusiness 4, 5, 6-100. Jednotlivé modely mohou být osazeny různým typem bateriového úložiště, počtem nabíječek a mohou být připojeny ke stávající FVE.</p>
+                <div class="text-center mt-4">
+                    <a href="download/Prezentace CARPORTbusiness - Podnikatelská příležitost pro zákazníka (2).pdf" class="btn permit-btn" target="_blank" download>Stáhnout prezentaci CARPORTbusiness <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Technology Section -->
+    <section id="technology" class="technology-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>CARPORTbusiness – <span class="highlight">Solární technologie</span> nabíjení budoucnosti</h2>
+                <p>Moderní řešení kombinující parkování, výrobu energie a nabíjení elektromobilů</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="technology-content" style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                        <h3>Komplexní řešení pro podnikání</h3>
+                        <p>Poskytujeme řešení pro podnikání v nabíjení elektromobilů a případné snížení energetické zátěže přilehlých budov a zakrytí parkovacích stání. Je to nástroj jak:</p>
+                        <ul>
+                            <li>Provozovat ekologické komerční AC a DC nabíjecí stanice elektromobilů se ziskem.</li>
+                            <li>Efektivně snížit náklady na provoz budov díky vyrobenému proudu, který nespotřebuje nabíjení.</li>
+                            <li>Snížit uhlíkovou stopu firmy, tedy reálně řešit ESG.</li>
+                            <li>Přivést zákazníky prostřednictvím dobíjení a přitom získat podporu evropského fondu.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="technology-features" style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                        <h3>Klíčové vlastnosti technologie</h3>
+                        <ul>
+                            <li>Nabíjecí stanice s 2 až 6 konektory na 1 nabíjecí stojan, 1 nebo 2 stání.</li>
+                            <li>Možnost volby mezi AC a DC nabíjením.</li>
+                            <li>Robustní konstrukce a kvalitní komponenty pro minimální údržbu.</li>
+                            <li>Integrované řízení energie a monitoring provozu.</li>
+                            <li>Snadná instalace na pozemku zákazníka.</li>
+                            <li>Vzdálená správa, servis a podpora.</li>
+                            <li>Různá barevná provedení konstrukce.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="technology-diagram">
+                        <h3 class="text-center">Popis funkce elektrárny</h3>
+                        <div class="diagram-image text-center mt-4">
+                            <div class="animated-diagram">
+                                <img src="img/popis_funkce.gif" alt="Animace funkce elektrárny" class="img-fluid gif-animation">
+                            </div>
+                        </div>
+                        <div class="diagram-description mt-4">
+                            <p>Hlavní součástí hybridních elektráren je Hybridní měnič, který má vstup z baterií pro ostrovní režim a vstup z distribuční sítě pro přepnutí na tuto zálohu.</p>
+                            <p>Jedná se o měnič napětí a nabíječku v jednom. Zahrnuje čistě sinusový měnič, adaptivní nabíjení, hybridní technologii PowerAssist a další funkce pro integraci do různých typů systémů. Vybaven je jedním AC vstupem pro připojení distribuční sítě nebo např. generátoru. Výstup AC1 zajistí dodávky energie bez přerušení např. v režimu UPS MultiPlus převezme napájení připojených spotřebičů za méně než 20 milisekund v případě výpadku distribuční sítě nebo generátoru. Druhý výstup je funkční pouze tehdy je-li AC vstup připojen k distribuční síti či generátoru. Zátěž, která by rychle vybila akumulátory, je tedy možné připojit k tomuto výstupu a bude napájena pouze z AC zdroje.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01; padding: 30px;">
+                        <h3 class="text-center">Hybridní fotovoltaická elektrárna, nabíječky elektromobilů, systém ukládání dešťové vody na užitkovou.</h3>
+                        <div class="row mt-4">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li>Hybridní fotovoltaické elektrárny s nabíječkami elektromobilů. Parkující na Vašem parkovišti můžou současně nabíjet svůj elektromobil.</li>
+                                    <li>Do nabíječky je energie distribuována přímo z elektrárny, případně doplněna odběrem z bateriového úložiště a pokud by dodávka z elektrárny nestačila může systém doplnit odběr z vnější distribuční sítě.</li>
+                                    <li>Aby nebyl odběr ze sítě příliš nárazový a nedocházelo k velkým výkyvům v odběru, lze systém nastavit tak, že se baterie budou částečně dobíjet ze sítě v období, kdy elektrárna nevyrábí.</li>
+                                    <li>Celý systém lze ovládat a pokud by se připojilo více odběratelů na rychlonabíjení elektromobilů, systém kapacitu pro jednotlivé nabíječky rozdělí.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li>K již popsaným systémům je možno doplnit nádrž na zachytávání dešťové vody, která může být využívána jako užitková. Přepad z nádrže je napojen na dešťovou kanalizaci.</li>
+                                </ul>
+                                <div class="text-center mt-4">
+                                    <img src="img/picture_bg.png" alt="Vizualizace CARPORT" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="video-container">
+                        <video id="constructionVideo" width="100%" muted playsinline loop>
+                            <source src="video/konstrukce.mp4" type="video/mp4">
+                            Váš prohlížeč nepodporuje přehrávání videa.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <section class="charger-variants">
+                        <div class="container">
+                            <h2>Varianty <span class="highlight">nabíječek</span></h2>
+                            <div class="wallbox-section">
+                                <div class="charger-type">
+                                    <h3>Wallboxy AC:</h3>
+                                    <ul class="charger-list">
+                                        <li>Wallbox s jednou zásuvkou 3,7kW až 22kW</li>
+                                        <li>Wallbox DUO s dvěma zásuvkami 2 x 3,7kW až 22kW</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="charger-type">
+                                <h3>Rychlonabíjecí stanice AC/DC:</h3>
+                                <ul class="charger-list">
+                                    <li>EVO 80 – nabíjecí výkon AC max 22kW a DC max 80kW, s jednou zásuvkou AC s 2 x nabíjecí kabel DC</li>
+                                    <li>EVO 120 - nabíjecí výkon AC max 22kW a DC max 120kW, s jednou zásuvkou AC s 2 x nabíjecí kabel DC</li>
+                                    <li>EVO 160 - nabíjecí výkon AC max 22kW a DC max 160kW, s jednou zásuvkou AC s 2 x nabíjecí kabel DC</li>
+                                    <li>EVO 200 - nabíjecí výkon AC max 22kW a DC max 200kW, s jednou zásuvkou AC s 2 x nabíjecí kabel DC</li>
+                                    <li>EVO 240 - nabíjecí výkon AC max 22kW a DC max 240kW, s jednou zásuvkou AC s 2 x nabíjecí kabel DC</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="warranty-service" style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                        <h3 class="text-center">Záruka a servis CARPORT</h3>
+                        <div class="row mt-4">
+                            <div class="col-lg-6">
+                                <h4>Záruka</h4>
+                                <ul>
+                                    <li>Záruka 5 let na elektrárnu a nabíječky.</li>
+                                    <li>Záruka 15 let na panely.</li>
+                                </ul>
+                                <h4>Servis</h4>
+                                <ul>
+                                    <li>Elektrárna má dálkové monitorování přes internet. Systém sám dokáže diagnostikovat chyby a vadné součástky.</li>
+                                    <li>Naše společnost dálkově monitoruje stav elektrárny a v případě poruchy přijede do 24 hodin technik s náhradními díly a elektrárnu opraví.</li>
+                                    <li>Po uplynutí 5 let bude servis poskytovaný dle servisní smlouvy, ovšem za ceny obvyklé a přiměřené.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <h4>Servisní náklady</h4>
+                                <ul>
+                                    <li>Roční údržba a revize 1x ročně se pohybují kolem 1% z pořizovací ceny.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- For Business Section -->
+    <section id="for-business" class="for-business-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>CARPORTy <span class="highlight">pro firmy</span></h2>
+                <p>Řešení pro velké komerční parkoviště a firemní klienty</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="business-content">
+                        <h3>CARPORTy pro velké firemní klienty</h3>
+                        <p>Naším cílem je dodávat CARPORTy pro velké výrobní firmy, autosalony, hotely, provozovatele skladů, obchodních center, obchodních řetězců, provozovatelů parkovišť, města, letiště, čerpací stanice, fast foody, ski areály a podobně.</p>
+                        <p>Naše technologie je modulární a proto není rozdíl vyrobit CARPORT 1, nebo CARPORT 100.</p>
+                        <p>Vyrobená elektřina z velkých nevyužitých parkovacích ploch pomáhá rapidně snižovat energetickou náročnost velkých budov, výrob a provozoven.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-6 mb-4">
+                    <div class="photo-container" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                        <img src="img/Picture9.jpg" alt="CARPORT pro firmy 1" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="photo-container" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                        <img src="img/Picture10.jpg" alt="CARPORT pro firmy 2" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#contact" class="btn permit-btn">Kontaktujte nás pro firemní řešení <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ROI Calculator Section -->
+    <section id="roi" class="roi-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>ROI <span class="highlight">Kalkulačka</span></h2>
+                <p>Spočítejte si návratnost investice a potenciální výnos CARPORTbusiness</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div id="roi-calculator" class="roi-calculator" data-currency="czk" data-pricing="czk" data-model-prices="[3500000, 5290000, 6590000]" style="background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
+                        <div class="position-absolute" style="top: 0; right: 0; width: 150px; height: 150px; background-color: rgba(7, 255, 1, 0.05); border-radius: 0 0 0 150px; z-index: 0;"></div>
+                        <div style="position: relative; z-index: 1;">
+                        <h3 class="text-center mb-4" style="font-weight: 700; color: #181818;">Kalkulačka návratnosti investice (ROI)</h3>
+                        <p class="text-center mb-5" style="color: #666;">Tento kalkulátor je pouze orientační a slouží k základnímu odhadu návratnosti investice. Pro přesnou kalkulaci kontaktujte naše obchodní oddělení.</p>
+                        
+                        <div class="mb-5">
+                            <h5 class="mb-3" style="font-weight: 600;">Typ CARPORT:</h5>
+                            <div class="row mb-4" id="carport-model-selector">
+                                <div class="col-md-4 mb-3">
+                                    <div class="carport-option" data-value="0" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 1</h6>
+                                        <p class="mb-1" style="color: #666; font-size: 14px;">12 parkovacích míst</p>
+                                        <p style="color: #666; font-size: 14px;">30 kWp</p>
+                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">3 500 000 Kč</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="carport-option" data-value="1" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 2</h6>
+                                        <p class="mb-1" style="color: #666; font-size: 14px;">24 parkovacích míst</p>
+                                        <p style="color: #666; font-size: 14px;">60 kWp</p>
+                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">5 290 000 Kč</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="carport-option" data-value="2" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 3</h6>
+                                        <p class="mb-1" style="color: #666; font-size: 14px;">36 parkovacích míst</p>
+                                        <p style="color: #666; font-size: 14px;">90 kWp</p>
+                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">6 590 000 Kč</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="carport-model" value="0">
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="parameters-section" style="background-color: #f9f9f9; border-radius: 10px; padding: 25px; height: 100%;">
+                                    <h5 class="mb-4" style="font-weight: 600;">Parametry nabíjení:</h5>
+                                    
+                                    <div class="form-group mb-4">
+                                        <label class="form-label d-flex justify-content-between" style="font-weight: 600;">
+                                            <span>Počet nabíjení denně AC 22kW (Pomalé nabíjení):</span>
+                                            <span style="color: #07ff01; font-weight: 700;" id="ac-chargings-value">5</span>
+                                        </label>
+                                        <input type="range" class="form-range roi-calculator-range" id="ac-chargings" min="1" max="20" value="5" data-output="ac-chargings-value" style="height: 8px; cursor: pointer; background-color: #e9e9e9; border-radius: 5px; border: 1px solid #ccc;">
+                                        <div class="d-flex justify-content-between">
+                                            <small>1</small>
+                                            <small>20</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group mb-4">
+                                        <label class="form-label d-flex justify-content-between" style="font-weight: 600;">
+                                            <span>Počet nabíjení denně DC 160kW (Rychlé nabíjení):</span>
+                                            <span style="color: #07ff01; font-weight: 700;" id="dc-chargings-value">5</span>
+                                        </label>
+                                        <input type="range" class="form-range roi-calculator-range" id="dc-chargings" min="1" max="20" value="5" data-output="dc-chargings-value" style="height: 8px; cursor: pointer; background-color: #e9e9e9; border-radius: 5px; border: 1px solid #ccc;">
+                                        <div class="d-flex justify-content-between">
+                                            <small>1</small>
+                                            <small>20</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label d-flex justify-content-between" style="font-weight: 600;">
+                                            <span>Cena elektřiny ze sítě (Kč/kWh):</span>
+                                            <span style="color: #07ff01; font-weight: 700;" id="electricity-price-value">5</span>
+                                        </label>
+                                        <input type="range" class="form-range roi-calculator-range" id="electricity-price" min="3" max="10" step="0.1" value="5" data-output="electricity-price-value" style="height: 8px; cursor: pointer; background-color: #e9e9e9; border-radius: 5px; border: 1px solid #ccc;">
+                                        <div class="d-flex justify-content-between">
+                                            <small>3 Kč</small>
+                                            <small>10 Kč</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="roi-info p-4 rounded" style="background-color: rgba(7, 255, 1, 0.08); border-radius: 10px; height: 100%;">
+                                    <h5 class="mb-3" style="font-weight: 600;">Parametry kalkulace:</h5>
+                                    <ul class="mb-0 ps-3" style="list-style-type: none;">
+                                        <li class="mb-3"><i class="fas fa-check-circle" style="color: #07ff01; margin-right: 8px;"></i> Průměrné nabití na 1 vozidlo: 70 kWh</li>
+                                        <li class="mb-3"><i class="fas fa-check-circle" style="color: #07ff01; margin-right: 8px;"></i> Prodejní cena AC nabíjení: 10 Kč/kWh</li>
+                                        <li class="mb-3"><i class="fas fa-check-circle" style="color: #07ff01; margin-right: 8px;"></i> Prodejní cena DC nabíjení: 16 Kč/kWh</li>
+                                        <li class="mb-3"><i class="fas fa-check-circle" style="color: #07ff01; margin-right: 8px;"></i> Kalkulace zahrnuje úsporu za elektřinu vyrobenou solárními panely</li>
+                                        <li><i class="fas fa-check-circle" style="color: #07ff01; margin-right: 8px;"></i> Výpočet zahrnuje 365 dní provozu ročně</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mt-5 mb-4 text-center" style="font-weight: 700; color: #181818;">Výsledky</h5>
+                        
+                        <div class="row results-section">
+                            <div class="col-md-6 mb-4">
+                                <div class="result-box text-center p-4 rounded" style="background-color: #f9f9f9; border: 1px solid #e6e6e6; border-radius: 10px; transition: all 0.3s ease;">
+                                    <div class="mb-2"><i class="fas fa-calendar-day" style="font-size: 24px; color: #07ff01;"></i></div>
+                                    <h5 style="font-weight: 600; color: #181818;">Denní příjem</h5>
+                                    <p class="result-value" id="daily-income" style="font-size: 2rem; font-weight: 700; color: #07ff01; margin: 10px 0;">0 Kč</p>
+                                    <p class="small text-muted mb-0">Očekávaný denní příjem z provozu nabíjecí stanice</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="result-box text-center p-4 rounded" style="background-color: #f9f9f9; border: 1px solid #e6e6e6; border-radius: 10px; transition: all 0.3s ease;">
+                                    <div class="mb-2"><i class="fas fa-calendar" style="font-size: 24px; color: #07ff01;"></i></div>
+                                    <h5 style="font-weight: 600; color: #181818;">Roční příjem</h5>
+                                    <p class="result-value" id="annual-income" style="font-size: 2rem; font-weight: 700; color: #07ff01; margin: 10px 0;">0 Kč</p>
+                                    <p class="small text-muted mb-0">Očekávaný příjem za celý rok provozu</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="result-box text-center p-4 rounded" style="background-color: #f9f9f9; border: 1px solid #e6e6e6; border-radius: 10px; transition: all 0.3s ease;">
+                                    <div class="mb-2"><i class="fas fa-chart-line" style="font-size: 24px; color: #07ff01;"></i></div>
+                                    <h5 style="font-weight: 600; color: #181818;">Návratnost investice</h5>
+                                    <p class="result-value mb-0" id="roi-years" style="font-size: 2rem; font-weight: 700; color: #07ff01; margin: 10px 0 0 0;">0</p>
+                                    <p class="small text-muted mb-2">let</p>
+                                    <p id="roi-evaluation" class="small mb-0" style="color: #07ff01; font-weight: 600;">Výborná investice s rychlou návratností!</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="result-box text-center p-4 rounded" style="background-color: #f9f9f9; border: 1px solid #e6e6e6; border-radius: 10px; transition: all 0.3s ease;">
+                                    <div class="mb-2"><i class="fas fa-coins" style="font-size: 24px; color: #07ff01;"></i></div>
+                                    <h5 style="font-weight: 600; color: #181818;">Celkový výnos po 30 letech</h5>
+                                    <p class="result-value" id="total-income-30-years" style="font-size: 2rem; font-weight: 700; color: #07ff01; margin: 10px 0;">0 Kč</p>
+                                    <p class="small text-muted mb-0">Dlouhodobý finanční přínos vaší investice</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <a href="#contact" class="btn btn-primary btn-lg" style="background-color: #07ff01; border: none; color: #181818; font-weight: 600; padding: 12px 30px; border-radius: 30px;">Získat přesnou kalkulaci</a>
+                            <p class="small text-muted mt-3">Tato kalkulačka poskytuje přibližný odhad návratnosti investice a potenciálních výnosů. Pro přesnou kalkulaci na míru vašim potřebám nás kontaktujte.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Kontaktujte <span class="highlight">nás</span></h2>
+                <p>Máte zájem o naše řešení nebo potřebujete více informací o CARPORTbusiness?</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="contact-info" style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                        <h3>Kontaktujte naše obchodní oddělení</h3>
+                        <div class="contact-person mt-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <h4><i class="fas fa-user me-2" style="color: #07ff01;"></i> Tomáš Nádvorník</h4>
+                                    <p class="mb-2"><i class="fas fa-phone me-2" style="color: #07ff01;"></i> +420 775 265 819</p>
+                                    <p class="mb-4"><i class="fas fa-envelope me-2" style="color: #07ff01;"></i> tomas.nadvornik@carportbusiness.com</p>
+                                    <p class="mb-4">Máte zájem o naše produkty nebo služby? Neváhejte kontaktovat naše obchodní oddělení. Tomáš Nádvorník vám rád poskytne veškeré informace a odpovědi na vaše dotazy.</p>
+                                    <div class="contact-buttons">
+                                        <a href="tel:+420775265819" class="btn btn-primary me-3" style="background-color: #07ff01; border: none;"><i class="fas fa-phone me-2"></i>Zavolat</a>
+                                        <a href="mailto:tomas.nadvornik@carportbusiness.com" class="btn btn-outline-primary" style="border-color: #07ff01; color: #000;"><i class="fas fa-envelope me-2"></i>E-mail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-3 mb-lg-0">
+                    <div class="footer-logo-container">
+                        <img src="img/logo-white.png" alt="SOLARbusiness Logo" class="footer-logo" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
+                        <p class="logo-description">Specialista na solární přístřešky, carporty a hybridní fotovoltaické elektrárny pro komerční i domácí využití, včetně nabíjecích stanic pro elektromobily.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-links">
+                        <h4>Rychlé odkazy</h4>
+                        <ul class="footer-menu">
+                            <li><a href="#about">O nás</a></li>
+                            <li><a href="#products">Produkty</a></li>
+                            <li><a href="#technology">Technologie</a></li>
+                            <li><a href="#for-business">Pro firmy</a></li>
+                            <li><a href="#roi">ROI Kalkulačka</a></li>
+                            <li><a href="#contact">Kontakt</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-contact">
+                        <h4>Zůstaňte v kontaktu</h4>
+                        <p>Chudenická 1059/30<br>
+                           Praha Hostivař<br>
+                           102 00, Česká republika</p>
+                        <p><a href="tel:+420775265819" class="contact-link">+420 775 265 819</a><br>
+                          <a href="mailto:info@solarbusiness.com" class="contact-link">info@solarbusiness.com</a></p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="icon-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="icon-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <div class="footer-company-info">
+                    <div class="company-info-row">&copy; 2025 <span class="solar-highlight">SOLAR</span>business</div>
+                    <div class="company-info-row">&copy; 2025 Robotech Innovation s.r.o. | IČ: 22244018 Všechna práva vyhrazena.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background-color: #07ff01; color: black; width: 50px; height: 50px; border-radius: 50%; border: none; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.3); outline: none; transition: all 0.3s ease;">
+        <i style="border: solid black; border-width: 0 3px 3px 0; display: inline-block; padding: 5px; transform: rotate(-135deg); -webkit-transform: rotate(-135deg);"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/roi-calculator.js"></script>
+</body>
+</html>
