@@ -123,162 +123,102 @@ span.highlight-container:hover .highlight {
   text-shadow: 0 0 10px rgba(7, 255, 1, 0.5), 0 0 20px rgba(7, 255, 1, 0.3);
 }
 
-/* Navbar */
-.navbar {
-  background-color: #07ff01;
-  padding: 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  z-index: 1030;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+/* Navbar a logo */
+.navbar.navbar-expand-lg {
+    background-color: #07ff01;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1030;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 140px !important;  
 }
 
-.navbar .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+.navbar.navbar-expand-lg .container {
+    height: 100%;
+    padding: 0 1rem;
 }
 
-.navbar.scrolled {
-  height: 70px;
-  background-color: rgba(7, 255, 1, 0.95);
+.navbar.navbar-expand-lg .navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 100%;
+    margin: 0;
 }
 
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0;
-  max-height: 100%;
-  overflow: hidden;
+.navbar.navbar-expand-lg .logo-container {
+    height: 100%;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
 }
 
-.logo {
-  height: auto;
-  max-height: 60%;
-  width: auto;
-  max-width: 220px;
-  padding: 8px 0;
-  object-fit: contain;
-  transition: all 0.3s ease;
-}
-
-.navbar.scrolled .logo {
-  max-height: 55%;
-  padding: 6px 0;
-}
-
-@media (min-width: 768px) {
-  .navbar {
-    height: 90px;
-  }
-  
-  .logo {
-    max-height: 65%;
-    padding: 8px 0;
-    max-width: 250px;
-  }
-}
-
-@media (min-width: 992px) {
-  .navbar {
-    height: 100px;
-  }
-  
-  .logo {
-    max-height: 70%;
-    padding: 10px 0;
-    max-width: 280px;
-  }
+.navbar.navbar-expand-lg .logo {
+    height: 130px !important;  
+    width: auto !important;
+    object-fit: contain !important;
+    max-width: none !important;
+    max-height: none !important;
 }
 
 @media (max-width: 991.98px) {
-  body {
-    padding-top: 60px;
-  }
-  
-  .navbar {
-    height: auto;
-    min-height: 60px;
-    padding: 5px 0;
-  }
-  
-  .navbar.scrolled {
-    height: auto;
-    min-height: 50px;
-  }
-  
-  .navbar .container {
-    padding: 0 15px;
-    flex-wrap: nowrap;
-  }
+    body {
+        padding-top: 110px;  
+    }
 
-  .navbar-brand {
-    padding: 5px 0;
-    margin: 0;
-    flex: 0 0 auto;
-  }
-  
-  .logo {
-    max-height: 40px;
-    padding: 0;
-  }
-  
-  .navbar.scrolled .logo {
-    max-height: 35px;
-  }
-  
-  .navbar-toggler {
-    padding: 4px 8px;
-    margin: 0 0 0 auto;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    order: 2;
-  }
-  
-  .navbar-collapse {
-    background-color: #fff;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    z-index: 1020;
-    margin: 0 10px;
-  }
-  
-  .hero-section {
-    margin-top: 0;
-    padding-top: 80px;
-  }
+    .navbar.navbar-expand-lg {
+        height: 110px !important;  
+    }
+    
+    .navbar.navbar-expand-lg .navbar-brand {
+        padding: 0;
+        margin-right: 1rem;
+    }
+    
+    .navbar.navbar-expand-lg .logo-container {
+        height: 100%;
+        padding: 5px 0;
+    }
+
+    .navbar.navbar-expand-lg .logo {
+        height: 100px !important;  
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #07ff01;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 1020;
+    }
+
+    .navbar-toggler {
+        padding: 4px 8px;
+        margin-right: 5px;
+        border: 1px solid rgba(0,0,0,0.2);
+    }
+
+    .nav-item {
+        text-align: center;
+        padding: 8px 0;
+    }
+
+    .nav-link {
+        color: #000 !important;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
 }
 
-@media (max-width: 575.98px) {
-  .navbar {
-    min-height: 55px;
-  }
-  
-  .logo {
-    max-height: 35px;
-  }
-  
-  .navbar-toggler {
-    padding: 3px 6px;
-  }
-  
-  .navbar-collapse {
-    margin: 0 5px;
-  }
-}
-
+/* Navbar */
 .navbar-nav {
   display: flex;
   align-items: center;

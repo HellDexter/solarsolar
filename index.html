@@ -13,140 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="icon" href="img/favicon.ico">
     <style>
-        /* Přímé vložení stylů pro navbar - tímto obejdeme cache */
-        .navbar {
-            background-color: #07ff01;
-            padding: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            z-index: 1030;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-        }
-        
-        .navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
-        
-        @media (max-width: 991.98px) {
-            body {
-                padding-top: 70px;
-            }
-            
-            .navbar {
-                height: auto;
-                min-height: 70px;
-                padding: 2px 0;
-            }
-            
-            .navbar .container {
-                padding: 0 5px 0 0;
-                flex-wrap: nowrap;
-            }
-            
-            .navbar-brand {
-                padding: 0;
-                margin: 0;
-                flex: 1 1 auto;
-                height: 70px;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                max-width: 85%;
-            }
-            
-            .logo {
-                height: 100%;
-                width: auto;
-                max-width: 100%;
-                max-height: none;
-                padding: 2px;
-                object-fit: contain;
-                object-position: left center;
-            }
-            
-            /* Důležité - zastavení zmenšení loga při scrollování */
-            .navbar.scrolled .logo {
-                height: 100%;
-            }
-            
-            .navbar.scrolled {
-                min-height: 70px;
-            }
-            
-            .navbar-toggler {
-                padding: 4px 8px;
-                margin: 0 0 0 auto;
-                border: 1px solid rgba(0, 0, 0, 0.2);
-                order: 2;
-                flex: 0 0 auto;
-            }
-            
-            .navbar-collapse {
-                background-color: #fff;
-                border-radius: 0 0 10px 10px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-                position: absolute;
-                top: 100%;
-                right: 0;
-                left: 0;
-                z-index: 1020;
-                margin: 0 10px;
-            }
-            
-            .hero-section {
-                margin-top: 0;
-                padding-top: 80px;
-            }
-        }
-        
-        /* Přidávám specifické nastavení pro logo na mobilních zařízeních */
-        @media (max-width: 575.98px) {
-            .navbar {
-                min-height: 70px;
-                padding: 0;
-            }
-            
-            .navbar-brand {
-                height: 70px;
-                max-width: 85%;
-                padding-left: 5px;
-            }
-            
-            .logo {
-                height: 100%;
-                max-height: 70px;
-                width: auto;
-                max-width: 100%;
-                object-fit: contain;
-                object-position: left center;
-            }
-            
-            /* Důležité - zastavení zmenšení loga při scrollování */
-            .navbar.scrolled .logo {
-                height: 100%;
-                max-height: 70px;
-            }
-            
-            .navbar.scrolled {
-                min-height: 70px;
-            }
-            
-            .navbar-toggler {
-                padding: 4px 6px;
-                margin-right: 5px;
-            }
-        }
-        
         .hero-section {
             position: relative;
         }
@@ -298,6 +164,69 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+        
+        /* Mobilní optimalizace */
+        @media (max-width: 768px) {
+            /* Hero sekce */
+            .hero-section {
+                padding: 2rem 1rem;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .hero-section h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+            .hero-section p {
+                font-size: 1.1rem;
+                line-height: 1.4;
+                margin-bottom: 2rem;
+            }
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+            .scroll-down {
+                font-size: 2rem;
+                margin-top: 2rem;
+            }
+
+            /* O nás sekce */
+            .about-section {
+                padding: 3rem 1rem;
+            }
+            .about-section h2 {
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+            .about-section p {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+            }
+            
+            /* Kontejnery a mezery */
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+                overflow-x: hidden;
+            }
+            .row {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -305,7 +234,9 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="img/logo.png" alt="CARPORTbusiness Logo" class="logo">
+                <div class="logo-container">
+                    <img src="img/logo.png" alt="CARPORTbusiness Logo" class="logo">
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -404,13 +335,13 @@
                     <h3 class="text-center mb-4">Naše realizace</h3>
                     <div class="row">
                         <div class="col-md-4 mb-4">
-                            <div class="photo-container gallery-item" data-src="img/gallery/Picture12.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                                <img src="img/gallery/Picture12.jpg" alt="Realizace 1" class="img-fluid">
+                            <div class="photo-container gallery-item" data-src="img/gallery/Picture13.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                                <img src="img/gallery/Picture13.jpg" alt="Realizace 2" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
-                            <div class="photo-container gallery-item" data-src="img/gallery/Picture13.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                                <img src="img/gallery/Picture13.jpg" alt="Realizace 2" class="img-fluid">
+                            <div class="photo-container gallery-item" data-src="img/gallery/Picture12.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                                <img src="img/gallery/Picture12.jpg" alt="Realizace 1" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
@@ -651,7 +582,7 @@
                             <li>Provozovat ekologické komerční AC a DC nabíjecí stanice elektromobilů se ziskem.</li>
                             <li>Efektivně snížit náklady na provoz budov díky vyrobenému proudu, který nespotřebuje nabíjení.</li>
                             <li>Snížit uhlíkovou stopu firmy, tedy reálně řešit ESG.</li>
-                            <li>Přivést zákazníky prostřednictvím dobíjení a přitom získat podporu evropského fondu.</li>
+                            <li>Přivést zákazníky prostřednictvím dobíjení.</li>
                         </ul>
                     </div>
                 </div>
@@ -665,7 +596,6 @@
                             <li>Integrované řízení energie a monitoring provozu.</li>
                             <li>Snadná instalace na pozemku zákazníka.</li>
                             <li>Vzdálená správa, servis a podpora.</li>
-                            <li>Různá barevná provedení konstrukce.</li>
                         </ul>
                     </div>
                 </div>
@@ -683,44 +613,6 @@
                         <div class="diagram-description mt-4">
                             <p>Hlavní součástí hybridních elektráren je Hybridní měnič, který má vstup z baterií pro ostrovní režim a vstup z distribuční sítě pro přepnutí na tuto zálohu.</p>
                             <p>Jedná se o měnič napětí a nabíječku v jednom. Zahrnuje čistě sinusový měnič, adaptivní nabíjení, hybridní technologii PowerAssist a další funkce pro integraci do různých typů systémů. Vybaven je jedním AC vstupem pro připojení distribuční sítě nebo např. generátoru. Výstup AC1 zajistí dodávky energie bez přerušení např. v režimu UPS MultiPlus převezme napájení připojených spotřebičů za méně než 20 milisekund v případě výpadku distribuční sítě nebo generátoru. Druhý výstup je funkční pouze tehdy je-li AC vstup připojen k distribuční síti či generátoru. Zátěž, která by rychle vybila akumulátory, je tedy možné připojit k tomuto výstupu a bude napájena pouze z AC zdroje.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-12">
-                    <div style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01; padding: 30px;">
-                        <h3 class="text-center">Hybridní fotovoltaická elektrárna, nabíječky elektromobilů, systém ukládání dešťové vody na užitkovou.</h3>
-                        <div class="row mt-4">
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li>Hybridní fotovoltaické elektrárny s nabíječkami elektromobilů. Parkující na Vašem parkovišti můžou současně nabíjet svůj elektromobil.</li>
-                                    <li>Do nabíječky je energie distribuována přímo z elektrárny, případně doplněna odběrem z bateriového úložiště a pokud by dodávka z elektrárny nestačila může systém doplnit odběr z vnější distribuční sítě.</li>
-                                    <li>Aby nebyl odběr ze sítě příliš nárazový a nedocházelo k velkým výkyvům v odběru, lze systém nastavit tak, že se baterie budou částečně dobíjet ze sítě v období, kdy elektrárna nevyrábí.</li>
-                                    <li>Celý systém lze ovládat a pokud by se připojilo více odběratelů na rychlonabíjení elektromobilů, systém kapacitu pro jednotlivé nabíječky rozdělí.</li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li>K již popsaným systémům je možno doplnit nádrž na zachytávání dešťové vody, která může být využívána jako užitková. Přepad z nádrže je napojen na dešťovou kanalizaci.</li>
-                                </ul>
-                                <div class="text-center mt-4">
-                                    <img src="img/picture_bg.png" alt="Vizualizace CARPORT" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div class="video-container">
-                        <video id="constructionVideo" width="100%" muted playsinline loop>
-                            <source src="video/konstrukce.mp4" type="video/mp4">
-                            Váš prohlížeč nepodporuje přehrávání videa.
-                        </video>
                     </div>
                 </div>
             </div>
@@ -757,7 +649,7 @@
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <div class="warranty-service" style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                        <h3 class="text-center">Záruka a servis CARPORT</h3>
+                        <h3 class="text-center">Záruka a servis CARPORTbusiness</h3>
                         <div class="row mt-4">
                             <div class="col-lg-6">
                                 <h4>Záruka</h4>
@@ -791,15 +683,15 @@
     <section id="for-business" class="for-business-section">
         <div class="container">
             <div class="section-header text-center">
-                <h2>CARPORTy <span class="highlight">pro firmy</span></h2>
+                <h2>CARPORTbusiness <span class="highlight">pro firmy</span></h2>
                 <p>Řešení pro velké komerční parkoviště a firemní klienty</p>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="business-content">
-                        <h3>CARPORTy pro velké firemní klienty</h3>
-                        <p>Naším cílem je dodávat CARPORTy pro velké výrobní firmy, autosalony, hotely, provozovatele skladů, obchodních center, obchodních řetězců, provozovatelů parkovišť, města, letiště, čerpací stanice, fast foody, ski areály a podobně.</p>
-                        <p>Naše technologie je modulární a proto není rozdíl vyrobit CARPORT 1, nebo CARPORT 100.</p>
+                        <h3>CARPORTbusiness pro firmy</h3>
+                        <p>Naším cílem je dodávat CARPORTbusiness pro velké výrobní firmy, autosalony, hotely, provozovatele skladů, obchodních center, obchodních řetězců, provozovatelů parkovišť, města, letiště, čerpací stanice, fast foody, ski areály a podobně.</p>
+                        <p>Naše technologie je modulární a proto není rozdíl vyrobit CARPORTbusiness 1 nebo CARPORTbusiness 100.</p>
                         <p>Vyrobená elektřina z velkých nevyužitých parkovacích ploch pomáhá rapidně snižovat energetickou náročnost velkých budov, výrob a provozoven.</p>
                     </div>
                 </div>
@@ -808,12 +700,12 @@
             <div class="row mt-5">
                 <div class="col-md-6 mb-4">
                     <div class="photo-container" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                        <img src="img/Picture9.jpg" alt="CARPORT pro firmy 1" class="img-fluid">
+                        <img src="img/Picture9.jpg" alt="CARPORTbusiness pro firmy 1" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="photo-container" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                        <img src="img/Picture10.jpg" alt="CARPORT pro firmy 2" class="img-fluid">
+                        <img src="img/Picture10.jpg" alt="CARPORTbusiness pro firmy 2" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -841,11 +733,11 @@
                         <p class="text-center mb-5" style="color: #666;">Tento kalkulátor je pouze orientační a slouží k základnímu odhadu návratnosti investice. Pro přesnou kalkulaci kontaktujte naše obchodní oddělení.</p>
                         
                         <div class="mb-5">
-                            <h5 class="mb-3" style="font-weight: 600;">Typ CARPORT:</h5>
+                            <h5 class="mb-3" style="font-weight: 600;">Typ CARPORTbusiness:</h5>
                             <div class="row mb-4" id="carport-model-selector">
                                 <div class="col-md-4 mb-3">
                                     <div class="carport-option" data-value="0" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
-                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 1</h6>
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORTbusiness 1</h6>
                                         <p class="mb-1" style="color: #666; font-size: 14px;">12 parkovacích míst</p>
                                         <p style="color: #666; font-size: 14px;">30 kWp</p>
                                         <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">3 500 000 Kč</div>
@@ -853,7 +745,7 @@
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <div class="carport-option" data-value="1" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
-                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 2</h6>
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORTbusiness 2</h6>
                                         <p class="mb-1" style="color: #666; font-size: 14px;">24 parkovacích míst</p>
                                         <p style="color: #666; font-size: 14px;">60 kWp</p>
                                         <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">5 290 000 Kč</div>
@@ -861,7 +753,7 @@
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <div class="carport-option" data-value="2" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
-                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 3</h6>
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORTbusiness 3</h6>
                                         <p class="mb-1" style="color: #666; font-size: 14px;">36 parkovacích míst</p>
                                         <p style="color: #666; font-size: 14px;">90 kWp</p>
                                         <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">6 590 000 Kč</div>
@@ -1015,8 +907,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-3 mb-lg-0">
                     <div class="footer-logo-container">
-                        <img src="img/logo-white.png" alt="SOLARbusiness Logo" class="footer-logo" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
-                        <p class="logo-description">Specialista na solární přístřešky, carporty a hybridní fotovoltaické elektrárny pro komerční i domácí využití, včetně nabíjecích stanic pro elektromobily.</p>
+                        <img src="img/logo-white.png" alt="CARPORTbusiness Logo" class="footer-logo" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -1039,12 +930,12 @@
                            Praha Hostivař<br>
                            102 00, Česká republika</p>
                         <p><a href="tel:+420775265819" class="contact-link">+420 775 265 819</a><br>
-                          <a href="mailto:info@solarbusiness.com" class="contact-link">info@solarbusiness.com</a></p>
+                          <a href="mailto:info@carportbusiness.com" class="contact-link">info@carportbusiness.com</a></p>
                         <div class="social-icons">
-                            <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
-                            <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="icon-youtube"></i></a>
-                            <a href="#" class="social-icon"><i class="icon-linkedin"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61574605797897" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/carportbusiness?igshid=cXczeTVubzJoaWJt&utm_source=qr" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/@carportbusiness?si=MLLhVgDTnL6vIrCo" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1052,7 +943,7 @@
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
                 <div class="footer-company-info">
-                    <div class="company-info-row">&copy; 2025 <span class="solar-highlight">SOLAR</span>business</div>
+                    <div class="company-info-row">&copy; 2025 <span class="solar-highlight">CARPORTbusiness</span></div>
                     <div class="company-info-row">&copy; 2025 Robotech Innovation s.r.o. | IČ: 22244018 Všechna práva vyhrazena.</div>
                 </div>
             </div>
@@ -1065,7 +956,7 @@
     </button>
 
     <!-- Scripts -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/roi-calculator.js"></script>
 </body>

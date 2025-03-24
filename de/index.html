@@ -71,6 +71,84 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+        
+        /* Mobilní optimalizace */
+        @media (max-width: 768px) {
+            /* Navigační lišta */
+            .navbar {
+                padding: 0.5rem 1rem;
+                width: 100vw;
+                margin: 0;
+                overflow: hidden;
+            }
+            .navbar-brand img {
+                height: 45px;
+                width: auto;
+            }
+            .navbar-toggler {
+                margin-right: 5px;
+            }
+
+            /* Hero sekce */
+            .hero-section {
+                padding: 2rem 1rem;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .hero-section h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+            .hero-section p {
+                font-size: 1.1rem;
+                line-height: 1.4;
+                margin-bottom: 2rem;
+            }
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+            .scroll-down {
+                font-size: 2rem;
+                margin-top: 2rem;
+            }
+
+            /* O nás sekce */
+            .about-section {
+                padding: 3rem 1rem;
+            }
+            .about-section h2 {
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+            .about-section p {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+            }
+            
+            /* Kontejnery a mezery */
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+                overflow-x: hidden;
+            }
+            .row {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -177,17 +255,17 @@
                     <h3 class="text-center mb-4">Unsere Implementierungen</h3>
                     <div class="row">
                         <div class="col-md-4 mb-4">
-                            <div class="photo-container gallery-item" data-src="../img/gallery/Picture12.jpg">
-                                <img src="../img/gallery/Picture12.jpg" alt="Implementierung 1" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="photo-container gallery-item" data-src="../img/gallery/Picture13.jpg">
+                            <div class="photo-container gallery-item" data-src="../img/gallery/Picture13.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
                                 <img src="../img/gallery/Picture13.jpg" alt="Implementierung 2" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
-                            <div class="photo-container gallery-item" data-src="../img/gallery/Picture14.jpg">
+                            <div class="photo-container gallery-item" data-src="../img/gallery/Picture12.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                                <img src="../img/gallery/Picture12.jpg" alt="Implementierung 1" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="photo-container gallery-item" data-src="../img/gallery/Picture14.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
                                 <img src="../img/gallery/Picture14.jpg" alt="Implementierung 3" class="img-fluid">
                             </div>
                         </div>
@@ -238,7 +316,7 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-money-bill-wave"></i>
-                                <div>Kaufpreis: 3.500.000 CZK zzgl. MwSt.</div>
+                                <div>Kaufpreis: EUR 158.000 zzgl. MwSt.</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-car"></i>
@@ -266,14 +344,14 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-chart-line"></i>
-                                <div>Durchschnittlicher Ertrag: 1.000.000 CZK/Jahr</div>
+                                <div>Durchschnittlicher Ertrag: EUR 40.000/Jahr</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-plug"></i>
                                 <div>Min. Anforderungen an das Verteilernetz: 3x32A</div>
                             </div>
                             <div class="product-price">
-                                <div class="price">3.500.000 CZK</div>
+                                <div class="price">EUR 158.000</div>
                                 <div class="price-note">zzgl. MwSt.</div>
                             </div>
                             <div class="product-cta">
@@ -295,7 +373,7 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-money-bill-wave"></i>
-                                <div>Kaufpreis: 5.290.000 CZK zzgl. MwSt.</div>
+                                <div>Kaufpreis: EUR 243.600 zzgl. MwSt.</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-car"></i>
@@ -323,14 +401,14 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-chart-line"></i>
-                                <div>Durchschnittlicher Ertrag: 1.500.000 CZK/Jahr</div>
+                                <div>Durchschnittlicher Ertrag: EUR 60.000/Jahr</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-plug"></i>
                                 <div>Min. Anforderungen an das Verteilernetz: 3x32A</div>
                             </div>
                             <div class="product-price">
-                                <div class="price">5.290.000 CZK</div>
+                                <div class="price">EUR 243.600</div>
                                 <div class="price-note">zzgl. MwSt.</div>
                             </div>
                             <div class="product-cta">
@@ -352,7 +430,7 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-money-bill-wave"></i>
-                                <div>Kaufpreis: 6.590.000 CZK zzgl. MwSt.</div>
+                                <div>Kaufpreis: EUR 309.600 zzgl. MwSt.</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-car"></i>
@@ -380,14 +458,14 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-chart-line"></i>
-                                <div>Durchschnittlicher Ertrag: 2.000.000 CZK/Jahr</div>
+                                <div>Durchschnittlicher Ertrag: EUR 80.000/Jahr</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-plug"></i>
                                 <div>Min. Anforderungen an das Verteilernetz: 3x32A</div>
                             </div>
                             <div class="product-price">
-                                <div class="price">6.590.000 CZK</div>
+                                <div class="price">EUR 309.600</div>
                                 <div class="price-note">zzgl. MwSt.</div>
                             </div>
                             <div class="product-cta">
@@ -426,7 +504,7 @@
                             <li>Ökologische kommerzielle AC- und DC-Ladestationen für Elektrofahrzeuge mit Gewinn zu betreiben.</li>
                             <li>Die Kosten für den Betrieb von Gebäuden dank des erzeugten Stroms, der nicht durch das Laden verbraucht wird, effektiv zu senken.</li>
                             <li>Den CO2-Fußabdruck des Unternehmens zu reduzieren, d.h. wirklich ESG anzugehen.</li>
-                            <li>Kunden durch Laden zu bringen und gleichzeitig Unterstützung aus dem Europäischen Fonds zu erhalten.</li>
+                            <li>Kunden durch Laden zu bringen.</li>
                         </ul>
                     </div>
                 </div>
@@ -440,7 +518,6 @@
                             <li>Integriertes Energiemanagement und Betriebsüberwachung.</li>
                             <li>Einfache Installation auf dem Land des Kunden.</li>
                             <li>Fernwartung, Service und Support.</li>
-                            <li>Verschiedene Farbgestaltungen der Struktur.</li>
                         </ul>
                     </div>
                 </div>
@@ -541,7 +618,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
-                    <div id="roi-calculator" class="roi-calculator" data-currency="eur" data-pricing="eur" data-model-prices="[140000, 211600, 263600]" style="background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
+                    <div id="roi-calculator" class="roi-calculator" data-currency="eur" data-pricing="eur" data-model-prices="[158000, 243600, 309600]" style="background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
                         <div class="position-absolute" style="top: 0; right: 0; width: 150px; height: 150px; background-color: rgba(7, 255, 1, 0.05); border-radius: 0 0 0 150px; z-index: 0;"></div>
                         <div style="position: relative; z-index: 1;">
                         <h3 class="text-center mb-4" style="font-weight: 700; color: #181818;">Kapitalrendite (ROI) Rechner</h3>
@@ -552,26 +629,26 @@
                             <div class="row mb-4" id="carport-model-selector">
                                 <div class="col-md-4 mb-3">
                                     <div class="carport-option" data-value="0" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
-                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 1</h6>
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORTbusiness 1</h6>
                                         <p class="mb-1" style="color: #666; font-size: 14px;">12 Parkplätze</p>
                                         <p style="color: #666; font-size: 14px;">30 kWp</p>
-                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">140.000 €</div>
+                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">EUR 158.000</div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <div class="carport-option" data-value="1" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
-                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 2</h6>
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORTbusiness 2</h6>
                                         <p class="mb-1" style="color: #666; font-size: 14px;">24 Parkplätze</p>
                                         <p style="color: #666; font-size: 14px;">60 kWp</p>
-                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">211.600 €</div>
+                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">EUR 243.600</div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <div class="carport-option" data-value="2" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
-                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 3</h6>
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORTbusiness 3</h6>
                                         <p class="mb-1" style="color: #666; font-size: 14px;">36 Parkplätze</p>
                                         <p style="color: #666; font-size: 14px;">90 kWp</p>
-                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">263.600 €</div>
+                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">EUR 309.600</div>
                                     </div>
                                 </div>
                             </div>
@@ -690,13 +767,13 @@
     <section id="warranty" class="warranty-section">
         <div class="container">
             <div class="section-header text-center">
-                <h2>CARPORT <span class="highlight">Garantie und Service</span></h2>
+                <h2>CARPORTbusiness <span class="highlight">Garantie und Service</span></h2>
                 <p>Wir bieten Ihnen eine umfassende Garantie und Serviceleistungen für Ihre Solar-Carports</p>
             </div>
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <div class="warranty-service" style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                        <h3 class="text-center">CARPORT Garantie und Service</h3>
+                        <h3 class="text-center">CARPORTbusiness Garantie und Service</h3>
                         <div class="row mt-4">
                             <div class="col-lg-6">
                                 <h4>Garantie</h4>
@@ -730,15 +807,15 @@
     <section id="for-business" class="for-business-section">
         <div class="container">
             <div class="section-header text-center">
-                <h2>CARPORTs <span class="highlight">für Unternehmen</span></h2>
+                <h2>CARPORTbusiness <span class="highlight">für Unternehmen</span></h2>
                 <p>Lösungen für große kommerzielle Parkplätze und Unternehmenskunden</p>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="business-content">
-                        <h3>CARPORTs für große Unternehmenskunden</h3>
-                        <p>Unser Ziel ist es, CARPORTs für große Produktionsunternehmen, Autohäuser, Hotels, Lagerhallenbesitzer, Einkaufszentren, Einzelhandelsketten, Parkplatzbetreiber, Städte, Flughäfen, Tankstellen, Fast-Food-Restaurants, Skigebiete und ähnliche Einrichtungen zu liefern.</p>
-                        <p>Unsere Technologie ist modular, und daher gibt es keinen Unterschied zwischen der Herstellung von CARPORT 1 oder CARPORT 100.</p>
+                        <h3>CARPORTbusiness für große Unternehmenskunden</h3>
+                        <p>Unser Ziel ist es, CARPORTbusiness für große Produktionsunternehmen, Autohäuser, Hotels, Lagerhallenbesitzer, Einkaufszentren, Einzelhandelsketten, Parkplatzbetreiber, Städte, Flughäfen, Tankstellen, Fast-Food-Restaurants, Skigebiete und ähnliche Einrichtungen zu liefern.</p>
+                        <p>Unsere Technologie ist modular, und daher gibt es keinen Unterschied zwischen der Herstellung von CARPORTbusiness 1 oder CARPORTbusiness 100.</p>
                         <p>Der von großen ungenutzten Parkflächen erzeugte Strom hilft, den Energiebedarf großer Gebäude, Produktionen und Betriebe schnell zu senken.</p>
                     </div>
                 </div>
@@ -746,12 +823,12 @@
             <div class="row mt-5">
                 <div class="col-md-6 mb-4">
                     <div class="photo-container" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                        <img src="../img/Picture9.jpg" alt="CARPORT für Unternehmen 1" class="img-fluid">
+                        <img src="../img/Picture9.jpg" alt="CARPORTbusiness für Unternehmen 1" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="photo-container" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                        <img src="../img/Picture10.jpg" alt="CARPORT für Unternehmen 2" class="img-fluid">
+                        <img src="../img/Picture10.jpg" alt="CARPORTbusiness für Unternehmen 2" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -800,8 +877,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-3 mb-lg-0">
                     <div class="footer-logo-container">
-                        <img src="../img/logo-white.png" alt="SOLARbusiness Logo" class="footer-logo" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
-                        <p class="logo-description">Spezialist für Solarcarports, -überdachungen und hybride Photovoltaik-Kraftwerke für gewerbliche und private Nutzer, einschließlich Ladestationen für Elektrofahrzeuge.</p>
+                        <img src="../img/logo-white.png" alt="CARPORTbusiness Logo" class="footer-logo" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -824,12 +900,11 @@
                            Prag Hostivař<br>
                            102 00, Tschechische Republik</p>
                         <p><a href="tel:+420775265819" class="contact-link">+420 775 265 819</a><br>
-                          <a href="mailto:info@solarbusiness.com" class="contact-link">info@solarbusiness.com</a></p>
+                          <a href="mailto:info@carportbusiness.com" class="contact-link">info@carportbusiness.com</a></p>
                         <div class="social-icons">
-                            <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
-                            <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="icon-youtube"></i></a>
-                            <a href="#" class="social-icon"><i class="icon-linkedin"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61574605797897" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/carportbusiness?igshid=cXczeTVubzJoaWJt&utm_source=qr" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/@carportbusiness?si=MLLhVgDTnL6vIrCo" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -837,7 +912,7 @@
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
                 <div class="footer-company-info">
-                    <div class="company-info-row">&copy; 2025 <span class="solar-highlight">SOLAR</span>business</div>
+                    <div class="company-info-row">&copy; 2025 CARPORTbusiness</div>
                     <div class="company-info-row">&copy; 2025 Robotech Innovation s.r.o. | ID: 22244018 Alle Rechte vorbehalten.</div>
                 </div>
             </div>

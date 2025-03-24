@@ -64,6 +64,84 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+        
+        /* Mobilní optimalizace */
+        @media (max-width: 768px) {
+            /* Navigační lišta */
+            .navbar {
+                padding: 0.5rem 1rem;
+                width: 100vw;
+                margin: 0;
+                overflow: hidden;
+            }
+            .navbar-brand img {
+                height: 45px;
+                width: auto;
+            }
+            .navbar-toggler {
+                margin-right: 5px;
+            }
+
+            /* Hero sekce */
+            .hero-section {
+                padding: 2rem 1rem;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .hero-section h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+            .hero-section p {
+                font-size: 1.1rem;
+                line-height: 1.4;
+                margin-bottom: 2rem;
+            }
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+            .scroll-down {
+                font-size: 2rem;
+                margin-top: 2rem;
+            }
+
+            /* O nás sekce */
+            .about-section {
+                padding: 3rem 1rem;
+            }
+            .about-section h2 {
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+            .about-section p {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+            }
+            
+            /* Kontejnery a mezery */
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+                overflow-x: hidden;
+            }
+            .row {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -170,13 +248,13 @@
                     <h3 class="text-center mb-4">Our Implementations</h3>
                     <div class="row">
                         <div class="col-md-4 mb-4">
-                            <div class="photo-container gallery-item" data-src="../img/gallery/Picture12.jpg">
-                                <img src="../img/gallery/Picture12.jpg" alt="Implementation 1" class="img-fluid">
+                            <div class="photo-container gallery-item" data-src="../img/gallery/Picture13.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                                <img src="../img/gallery/Picture13.jpg" alt="Implementation 2" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
-                            <div class="photo-container gallery-item" data-src="../img/gallery/Picture13.jpg">
-                                <img src="../img/gallery/Picture13.jpg" alt="Implementation 2" class="img-fluid">
+                            <div class="photo-container gallery-item" data-src="../img/gallery/Picture12.jpg" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
+                                <img src="../img/gallery/Picture12.jpg" alt="Implementation 1" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
@@ -231,7 +309,7 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-money-bill-wave"></i>
-                                <div>Purchase price: 3,500,000 CZK excl. VAT</div>
+                                <div>Purchase price: EUR 158,000 excluding tax</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-car"></i>
@@ -259,15 +337,15 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-chart-line"></i>
-                                <div>Average yield: 1,000,000 CZK/year</div>
+                                <div>Average yield: EUR 40,000/year</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-plug"></i>
                                 <div>Min. requirements for distribution network: 3x32A</div>
                             </div>
                             <div class="product-price">
-                                <div class="price">3,500,000 CZK</div>
-                                <div class="price-note">excl. VAT</div>
+                                <div class="price">EUR 158,000</div>
+                                <div class="price-note">excluding tax</div>
                             </div>
                             <div class="product-cta">
                                 <a href="#contact" class="btn btn-primary">I'm interested</a>
@@ -288,7 +366,7 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-money-bill-wave"></i>
-                                <div>Purchase price: 5,290,000 CZK excl. VAT</div>
+                                <div>Purchase price: EUR 243,600 excluding tax</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-car"></i>
@@ -316,15 +394,15 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-chart-line"></i>
-                                <div>Average yield: 1,500,000 CZK/year</div>
+                                <div>Average yield: EUR 60,000/year</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-plug"></i>
                                 <div>Min. requirements for distribution network: 3x32A</div>
                             </div>
                             <div class="product-price">
-                                <div class="price">5,290,000 CZK</div>
-                                <div class="price-note">excl. VAT</div>
+                                <div class="price">EUR 243,600</div>
+                                <div class="price-note">excluding tax</div>
                             </div>
                             <div class="product-cta">
                                 <a href="#contact" class="btn btn-primary">I'm interested</a>
@@ -345,7 +423,7 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-money-bill-wave"></i>
-                                <div>Purchase price: 6,590,000 CZK excl. VAT</div>
+                                <div>Purchase price: EUR 309,600 excluding tax</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-car"></i>
@@ -373,15 +451,15 @@
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-chart-line"></i>
-                                <div>Average yield: 2,000,000 CZK/year</div>
+                                <div>Average yield: EUR 80,000/year</div>
                             </div>
                             <div class="product-feature">
                                 <i class="fas fa-plug"></i>
                                 <div>Min. requirements for distribution network: 3x32A</div>
                             </div>
                             <div class="product-price">
-                                <div class="price">6,590,000 CZK</div>
-                                <div class="price-note">excl. VAT</div>
+                                <div class="price">EUR 309,600</div>
+                                <div class="price-note">excluding tax</div>
                             </div>
                             <div class="product-cta">
                                 <a href="#contact" class="btn btn-primary">I'm interested</a>
@@ -418,7 +496,7 @@
                             <li>Operate ecological commercial AC and DC charging stations for electric vehicles with a profit.</li>
                             <li>Effectively reduce the costs of operating buildings thanks to the produced electricity that is not consumed by charging.</li>
                             <li>Reduce the company's carbon footprint, i.e., really address ESG.</li>
-                            <li>Bring customers through charging and at the same time get support from the European fund.</li>
+                            <li>Bring customers through charging.</li>
                         </ul>
                     </div>
                 </div>
@@ -426,13 +504,12 @@
                     <div class="technology-features" style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
                         <h3>Key Features of Technology</h3>
                         <ul>
-                            <li>Charging station with 2 to 6 connectors on 1 charging stand, 1 or 2 parking spaces.</li>
+                            <li>Charging station.</li>
                             <li>Choice between AC and DC charging.</li>
                             <li>Robust construction and quality components for minimal maintenance.</li>
                             <li>Integrated energy management and operation monitoring.</li>
                             <li>Easy installation on the customer's land.</li>
                             <li>Remote management, service, and support.</li>
-                            <li>Various color designs of the structure.</li>
                         </ul>
                     </div>
                 </div>
@@ -524,7 +601,7 @@
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <div class="warranty-service" style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                        <h3 class="text-center">Warranty and Service CARPORT</h3>
+                        <h3 class="text-center">CARPORTbusiness Warranty and Service</h3>
                         <div class="row mt-4">
                             <div class="col-lg-6">
                                 <h4>Warranty</h4>
@@ -563,37 +640,37 @@
             </div>
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
-                    <div id="roi-calculator" class="roi-calculator" data-currency="eur" data-pricing="eur" data-model-prices="[140000, 211600, 263600]" style="background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
+                    <div id="roi-calculator" class="roi-calculator" data-currency="eur" data-pricing="eur" data-model-prices="[158000, 243600, 309600]" style="background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
                         <div class="position-absolute" style="top: 0; right: 0; width: 150px; height: 150px; background-color: rgba(7, 255, 1, 0.05); border-radius: 0 0 0 150px; z-index: 0;"></div>
                         <div style="position: relative; z-index: 1;">
                         <h3 class="text-center mb-4" style="font-weight: 700; color: #181818;">Return on Investment (ROI) Calculator</h3>
                         <p class="text-center mb-5" style="color: #666;">This calculator is for orientation purposes only and provides a basic estimate of investment returns. For an accurate calculation, please contact our sales department.</p>
                         
                         <div class="mb-5">
-                            <h5 class="mb-3" style="font-weight: 600;">CARPORT Type:</h5>
+                            <h5 class="mb-3" style="font-weight: 600;">Type CARPORTbusiness:</h5>
                             <div class="row mb-4" id="carport-model-selector">
                                 <div class="col-md-4 mb-3">
                                     <div class="carport-option" data-value="0" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
-                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 1</h6>
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORTbusiness 1</h6>
                                         <p class="mb-1" style="color: #666; font-size: 14px;">12 parking spaces</p>
                                         <p style="color: #666; font-size: 14px;">30 kWp</p>
-                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">€140,000</div>
+                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">EUR 158,000 excluding tax</div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <div class="carport-option" data-value="1" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
-                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 2</h6>
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORTbusiness 2</h6>
                                         <p class="mb-1" style="color: #666; font-size: 14px;">24 parking spaces</p>
                                         <p style="color: #666; font-size: 14px;">60 kWp</p>
-                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">€211,600</div>
+                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">EUR 243,600 excluding tax</div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <div class="carport-option" data-value="2" style="border: 2px solid #e6e6e6; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;">
-                                        <h6 style="font-weight: 700; color: #181818;">CARPORT 3</h6>
+                                        <h6 style="font-weight: 700; color: #181818;">CARPORTbusiness 3</h6>
                                         <p class="mb-1" style="color: #666; font-size: 14px;">36 parking spaces</p>
                                         <p style="color: #666; font-size: 14px;">90 kWp</p>
-                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">€263,600</div>
+                                        <div style="font-weight: 700; color: #07ff01; margin-top: 10px;">EUR 309,600 excluding tax</div>
                                     </div>
                                 </div>
                             </div>
@@ -712,15 +789,15 @@
     <section id="for-business" class="for-business-section">
         <div class="container">
             <div class="section-header text-center">
-                <h2>CARPORTs <span class="highlight">for business</span></h2>
+                <h2>CARPORTbusiness <span class="highlight">for Companies</span></h2>
                 <p>Solutions for large commercial parking lots and corporate clients</p>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="business-content">
-                        <h3>CARPORTs for large corporate clients</h3>
-                        <p>Our goal is to supply CARPORTs for large manufacturing companies, car dealerships, hotels, warehouse operators, shopping centers, retail chains, parking lot operators, cities, airports, gas stations, fast foods, ski resorts, and similar establishments.</p>
-                        <p>Our technology is modular and therefore there is no difference in producing CARPORT 1 or CARPORT 100.</p>
+                        <h3>CARPORTbusiness for large corporate clients</h3>
+                        <p>Our goal is to supply CARPORTbusiness for large manufacturing companies, car dealerships, hotels, warehouse operators, shopping centers, retail chains, parking lot operators, cities, airports, gas stations, fast foods, ski resorts, and similar establishments.</p>
+                        <p>Our technology is modular, and therefore there is no difference in manufacturing CARPORTbusiness 1 or CARPORTbusiness 100.</p>
                         <p>Electricity produced from large unused parking areas helps to rapidly reduce the energy demands of large buildings, productions, and operations.</p>
                     </div>
                 </div>
@@ -728,12 +805,12 @@
             <div class="row mt-5">
                 <div class="col-md-6 mb-4">
                     <div class="photo-container" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                        <img src="../img/Picture9.jpg" alt="CARPORT for business 1" class="img-fluid">
+                        <img src="../img/Picture9.jpg" alt="CARPORTbusiness for business 1" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="photo-container" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-left: 6px solid #07ff01;">
-                        <img src="../img/Picture10.jpg" alt="CARPORT for business 2" class="img-fluid">
+                        <img src="../img/Picture10.jpg" alt="CARPORTbusiness for business 2" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -761,11 +838,11 @@
                                 <div class="col-md-12">
                                     <h4><i class="fas fa-user me-2" style="color: #07ff01;"></i> Tomáš Nádvorník</h4>
                                     <p class="mb-2"><i class="fas fa-phone me-2" style="color: #07ff01;"></i> +420 775 265 819</p>
-                                    <p class="mb-4"><i class="fas fa-envelope me-2" style="color: #07ff01;"></i> tomas.nadvornik@carportbusiness.com</p>
+                                    <p class="mb-4"><i class="fas fa-envelope me-2" style="color: #07ff01;"></i> <a href="mailto:info@carportbusiness.com">info@carportbusiness.com</a></p>
                                     <p class="mb-4">Are you interested in our products or services? Don't hesitate to contact our sales department. Tomáš Nádvorník will be happy to provide you with all information and answers to your questions.</p>
                                     <div class="contact-buttons">
                                         <a href="tel:+420775265819" class="btn btn-primary me-3" style="background-color: #07ff01; border: none;"><i class="fas fa-phone me-2"></i>Call</a>
-                                        <a href="mailto:tomas.nadvornik@carportbusiness.com" class="btn btn-outline-primary" style="border-color: #07ff01; color: #000;"><i class="fas fa-envelope me-2"></i>Email</a>
+                                        <a href="mailto:info@carportbusiness.com" class="btn btn-outline-primary" style="border-color: #07ff01; color: #000;"><i class="fas fa-envelope me-2"></i>Email</a>
                                     </div>
                                 </div>
                             </div>
@@ -782,8 +859,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-3 mb-lg-0">
                     <div class="footer-logo-container">
-                        <img src="../img/logo-white.png" alt="SOLARbusiness Logo" class="footer-logo" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
-                        <p class="logo-description">Specialist in solar carports, canopies and hybrid photovoltaic power plants for commercial and residential use, including EV charging stations.</p>
+                        <img src="../img/logo-white.png" alt="CARPORTbusiness Logo" class="footer-logo" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -806,12 +882,11 @@
                            Prague Hostivař<br>
                            102 00, Czech Republic</p>
                         <p><a href="tel:+420775265819" class="contact-link">+420 775 265 819</a><br>
-                          <a href="mailto:info@solarbusiness.com" class="contact-link">info@solarbusiness.com</a></p>
+                          <a href="mailto:info@carportbusiness.com" class="contact-link">info@carportbusiness.com</a></p>
                         <div class="social-icons">
-                            <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
-                            <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="icon-youtube"></i></a>
-                            <a href="#" class="social-icon"><i class="icon-linkedin"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61574605797897" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/carportbusiness?igshid=cXczeTVubzJoaWJt&utm_source=qr" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/@carportbusiness?si=MLLhVgDTnL6vIrCo" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -819,7 +894,7 @@
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
                 <div class="footer-company-info">
-                    <div class="company-info-row">&copy; 2025 <span class="solar-highlight">SOLAR</span>business</div>
+                    <div class="company-info-row">&copy; 2025 CARPORTbusiness</div>
                     <div class="company-info-row">&copy; 2025 Robotech Innovation s.r.o. | ID: 22244018 All rights reserved.</div>
                 </div>
             </div>
